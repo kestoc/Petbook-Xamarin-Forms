@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Petbook.Paginas;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +15,7 @@ namespace Petbook.Paginas
         public menu()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
         private void btnComunity(object sender, EventArgs e)
         {
@@ -35,6 +36,11 @@ namespace Petbook.Paginas
         private void btnMenu(object sender, EventArgs e)
         {
             ((NavigationPage)this.Parent).PushAsync(new menu());
+        }
+
+        private void imprimir_ChildAdded(object sender, ElementEventArgs e)
+        {
+
         }
     }
 }

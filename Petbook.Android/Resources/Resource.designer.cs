@@ -8374,7 +8374,7 @@ namespace Petbook.Droid
 			public const int notify_panel_notification_icon_bg = 2131165305;
 			
 			// aapt resource value: 0x7F07007A
-			public const int person = 2131165306;
+			public const int personCircle = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
 			public const int search = 2131165307;

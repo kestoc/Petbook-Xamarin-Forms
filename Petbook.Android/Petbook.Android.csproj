@@ -119,10 +119,10 @@
     <AndroidResource Include="Resources\drawable\comunity.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\person.png" />
+    <AndroidResource Include="Resources\drawable\logOut.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\logOut.png" />
+    <AndroidResource Include="Resources\drawable\personCircle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

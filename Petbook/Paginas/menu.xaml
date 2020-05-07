@@ -10,14 +10,14 @@
             <StackLayout Orientation="Horizontal" BackgroundColor="#52BE80">
                 <Image HeightRequest="60" BackgroundColor="#52BE80" HorizontalOptions="StartAndExpand">
                     <Image.Source>
-                        <FileImageSource File="person.png"></FileImageSource>
+                        <FileImageSource File="personCircle.png"></FileImageSource>
                     </Image.Source>
                 </Image>
-                <Image HeightRequest="60" BackgroundColor="#52BE80">
-                    <Image.Source>
+                <ImageButton HeightRequest="30" BackgroundColor="#52BE80" TranslationX="-10">
+                    <ImageButton.Source>
                         <FileImageSource File="logOut.png"></FileImageSource>
-                    </Image.Source>
-                </Image>
+                    </ImageButton.Source>
+                </ImageButton>
             </StackLayout>
             
             <StackLayout BackgroundColor="#52BE80" Spacing="28" VerticalOptions="EndAndExpand" Orientation="Horizontal">
