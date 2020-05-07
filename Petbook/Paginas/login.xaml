@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundImageSource="fondo.jpg" 
+             x:Class="Petbook.Paginas.login">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="20">
+            <Image>
+                <Image.Source>
+                    <FileImageSource File="Logo.png"></FileImageSource>
+                </Image.Source>
+            </Image>
+            <Grid BackgroundColor="#B1EEBB">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="1" Padding="10">
+                    <Image WidthRequest="70">
+                        <Image.Source>
+                            <FileImageSource File="Slogan.png"></FileImageSource>
+                        </Image.Source>
+                    </Image>
+                    <Entry x:Name="user" Placeholder="USUARIO" PlaceholderColor="Gray" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="password" IsPassword="True" Text="" Placeholder="CONTRASEÑA" PlaceholderColor="Gray" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <Button BackgroundColor="#52BE80" FontSize="Title" TextColor="Black" Text="INGRESAR" Clicked="btnLogin">
+                        <Button.Triggers>
+                            <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference password},Path=Text.Length}" Value="0">
+                                <Setter Property="IsEnabled" Value="False"></Setter>
+                            </DataTrigger>
+                        </Button.Triggers>
+                    </Button>
+                    <Button BackgroundColor="#52BE80" TextColor="Black" Font="Bold" Text="Crear cuenta de Petbook" Clicked="btnRegister"></Button>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

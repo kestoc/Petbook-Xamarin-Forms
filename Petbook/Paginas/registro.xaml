@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundImageSource="fondo.jpg" 
+             x:Class="Petbook.Paginas.registro">
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Padding="30">
+                <Image>
+                    <Image.Source>
+                        <FileImageSource File="Logo.png"></FileImageSource>
+                    </Image.Source>
+                </Image>
+                <Grid BackgroundColor="#B1EEBB">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="1" Padding="10">
+                        <Entry x:Name="user" Placeholder="USUARIO" PlaceholderColor="Gray" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Entry x:Name="correo" Placeholder="CORREO ELECTRONICO" PlaceholderColor="Gray" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Entry x:Name="password" IsPassword="True" Placeholder="CONTRASEÑA" PlaceholderColor="Gray" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Label TextColor="Gray" FontAttributes="Bold" HorizontalTextAlignment="Start" FontSize="Medium" Text="Fecha Nacimiento:"></Label>
+                        <DatePicker HorizontalOptions="Center" TranslationX="55" TranslationY="-40" x:Name="fecha"></DatePicker>
+                        <Label TextColor="Black" FontAttributes="Bold" FontSize="Small" TextDecorations="Underline" HorizontalTextAlignment="Center" Text="He leído y acepto todos los &#10;Términos y Condiciones." ></Label>
+                        <CheckBox IsChecked="False" HorizontalOptions="Center" TranslationX="-100" TranslationY="-40" x:Name="check"></CheckBox>
+                        <Button BackgroundColor="#52BE80" FontSize="Title" TextColor="Black" Text="ENVIAR" Clicked="btnEnviar">
+                            <Button.Triggers>
+                                <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference check},Path=IsChecked}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False"></Setter>
+                                </DataTrigger>
+                            </Button.Triggers>
+                        </Button>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

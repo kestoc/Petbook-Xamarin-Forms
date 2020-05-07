@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Petbook.Paginas.publicacion">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" BackgroundColor="#52BE80">
+                <Image HeightRequest="60" BackgroundColor="#52BE80" HorizontalOptions="CenterAndExpand">
+                    <Image.Source>
+                        <FileImageSource File="write.png"></FileImageSource>
+                    </Image.Source>
+                </Image>
+            </StackLayout>
+            <Editor Placeholder="Escribir..." HeightRequest="400" x:Name="editor" Text=""></Editor>
+            <Button BackgroundColor="#52BE80" FontSize="Title" TextColor="Black" Text="PUBLICAR" Clicked="btnPublicar">
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference editor},Path=Text.Length}" Value="0">
+                        <Setter Property="IsEnabled" Value="False"></Setter>
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
+            <StackLayout BackgroundColor="#52BE80" Spacing="28" VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnComunity">
+                    <ImageButton.Source>
+                        <FileImageSource File="comunity.png"></FileImageSource>
+                    </ImageButton.Source>
+                </ImageButton>
+                <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnWrite">
+                    <ImageButton.Source>
+                        <FileImageSource File="write.png"></FileImageSource>
+                    </ImageButton.Source>
+                </ImageButton>
+                <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnLogo">
+                    <ImageButton.Source>
+                        <FileImageSource File="Logo.png"></FileImageSource>
+                    </ImageButton.Source>
+                </ImageButton>
+                <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnSearch">
+                    <ImageButton.Source>
+                        <FileImageSource File="search.png"></FileImageSource>
+                    </ImageButton.Source>
+                </ImageButton>
+                <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnMenu">
+                    <ImageButton.Source>
+                        <FileImageSource File="menu.png"></FileImageSource>
+                    </ImageButton.Source>
+                </ImageButton>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
