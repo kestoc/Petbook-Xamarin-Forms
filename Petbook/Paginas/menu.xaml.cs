@@ -13,18 +13,22 @@ namespace Petbook.Paginas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class menu : ContentPage
     {
-        public UserModel userAct { get; set; }
-        List<string> guardado = new List<string> { };
-        public IList<Options> Options { get; private set; }
+        public UserModel userAct { get; set; } //Variable para preservar el valor del usuario que inicio sesion
+
+        List<string> guardado = new List<string> { }; //Lista para almacenar las busquedas realizadas 
+        public IList<Options> Options { get; private set; } //Lista para almacenar las opciones que se tienen en el menu
         public menu(UserModel temp, List<string> temp2)
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetHasNavigationBar(this, false); //Sentencia para eliminar la barra de herramientas superior predeterminada por Android
             userAct = temp;
             guardado = temp2;
+            //BindingContext = userAct; 
 
-            DisplayAlert("Hola", userAct.name.ToString(), "Ok");
-
+            DisplayAlert("HOLA!", userAct.name.ToString(), "Ok"); //Debido al problema con los bindingContext a la hora de usarlo para la label y para la listView, se opto por mandar un cuadro
+                                                                 //de alerta que permita evidenciar el correcto guardado del usuario que inicio sesion
+            
+            //Añadiendo elementos a la lista de opciones
             Options = new List<Options>();
             Options.Add(new Options
             {
@@ -62,13 +66,15 @@ namespace Petbook.Paginas
                 Imagen = "lock.png"
             });
 
-            BindingContext = this;
+            BindingContext = this;  //Construir el contexto para hacer el linkeamiento de la clase y sus elementos y la parte grafica del XAML (patron MVVM)
         }
 
-        private void salir(object sender, EventArgs e)
+        private void salir(object sender, EventArgs e) //Funcion para permitir que el boton de logOut redireccione a la pagina de login
         {
             ((NavigationPage)this.Parent).PushAsync(new login());
         }
+
+        //Funciones para la navegacion y funcionamiento entre las paginas correspondientes a la barra inferior de herramientas de la App
         private void btnComunity(object sender, EventArgs e)
         {
             ((NavigationPage)this.Parent).PushAsync(new comunidad(userAct,guardado));

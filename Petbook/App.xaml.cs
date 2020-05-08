@@ -10,7 +10,8 @@ namespace Petbook
         public App()
         {
             InitializeComponent();
-
+            //Se cambio la configuracion a un tipo de la clase NavigationPage, para permitir la navegacion entre pags 
+            //y se enlaza la pagina principal (login).
             MainPage = new NavigationPage(new login());
         }
 

@@ -8,6 +8,7 @@
 
     <ContentPage.Content>
         <StackLayout>
+            <!-- Parte superior del diseño de la pag (logo escribir) -->
             <StackLayout Orientation="Horizontal" BackgroundColor="#52BE80">
                 <Image HeightRequest="60" BackgroundColor="#52BE80" HorizontalOptions="CenterAndExpand">
                     <Image.Source>
@@ -15,7 +16,9 @@
                     </Image.Source>
                 </Image>
             </StackLayout>
+            <!-- Editor para escribir simulando lo que se escribira para realizar una publicacion -->
             <Editor Placeholder="Escribir..." HeightRequest="400" x:Name="editor" Text=""></Editor>
+            <!-- Boton para "realizar la publicacion" y volver a la pagina principal de noticias -->
             <Button BackgroundColor="#52BE80" FontSize="Title" TextColor="Black" Text="PUBLICAR" Clicked="btnPublicar">
                 <Button.Triggers>
                     <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference editor},Path=Text.Length}" Value="0">
@@ -23,6 +26,7 @@
                     </DataTrigger>
                 </Button.Triggers>
             </Button>
+            <!-- Seccion donde se diseña la barra inferior de herramientas de la App -->
             <StackLayout BackgroundColor="#52BE80" Spacing="28" VerticalOptions="EndAndExpand" Orientation="Horizontal">
                 <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnComunity">
                     <ImageButton.Source>

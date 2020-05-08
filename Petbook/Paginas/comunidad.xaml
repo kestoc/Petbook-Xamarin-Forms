@@ -7,6 +7,7 @@
              x:Class="Petbook.Paginas.comunidad">
     <ContentPage.Content>
         <StackLayout>
+            <!-- Parte superior del diseño de la pag (logo comunidad y texto referente a estas) -->
             <StackLayout Orientation="Horizontal" BackgroundColor="#52BE80">
                 <Image HeightRequest="60" BackgroundColor="#52BE80" HorizontalOptions="CenterAndExpand">
                     <Image.Source>
@@ -20,6 +21,7 @@
                FontSize="Large"
                HorizontalOptions="Center"
             />
+            <!-- Vista en modo de lista para presentar las distintas comunidades que se encuentren creadas -->
             <ListView ItemsSource="{Binding Comuni}"
                              HasUnevenRows="True" SelectionMode="None">
                 <ListView.ItemTemplate>
@@ -53,6 +55,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <!-- Seccion donde se diseña la barra inferior de herramientas de la App -->
             <StackLayout BackgroundColor="#52BE80" Spacing="28" VerticalOptions="EndAndExpand" Orientation="Horizontal">
                 <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnComunity">
                     <ImageButton.Source>

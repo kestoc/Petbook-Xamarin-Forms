@@ -4,32 +4,36 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             BackgroundImageSource="fondo.jpg" 
+             BackgroundImageSource="fondo.jpg"
              x:Class="Petbook.Paginas.login">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Padding="20">
+            <!-- Logo de la App -->
             <Image>
                 <Image.Source>
                     <FileImageSource File="Logo.png"></FileImageSource>
                 </Image.Source>
             </Image>
+            <!-- Recuadro contenedor de los elementos (Caja verde) -->
             <Grid BackgroundColor="#B1EEBB">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
+                <!-- Organizacion de los elementos en modo de stack -->
                 <StackLayout Grid.Row="1" Padding="10">
                     <Image WidthRequest="70">
                         <Image.Source>
                             <FileImageSource File="Slogan.png"></FileImageSource>
                         </Image.Source>
                     </Image>
+                    <!-- Se pone el modo de comunicacion del entry en ambos sentidos, que reciba y envie los cambios que le ocurren para poder realizar el almacenamiento del usuario que inicio sesion -->
                     <Entry x:Name="user" Text="{Binding imprimir, Mode=TwoWay}" Placeholder="USUARIO" PlaceholderColor="Gray" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                     <Entry x:Name="password" IsPassword="True" Text="" Placeholder="CONTRASEÑA" PlaceholderColor="Gray" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                     <Button BackgroundColor="#52BE80" FontSize="Title" TextColor="Black" Text="INGRESAR" Clicked="btnLogin">
                         <Button.Triggers>
-                            <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference password},Path=Text.Length}" Value="0">
+                            <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference password},Path=Text.Length}" Value="0"> <!-- Referenciando al entry del password para que se habilite el boton de ingresar -->
                                 <Setter Property="IsEnabled" Value="False"></Setter>
                             </DataTrigger>
                         </Button.Triggers>
