@@ -20,6 +20,7 @@ namespace Petbook.Droid
 {
     public class SQLiteDB : ISQLiteDB
     {
+        //Clase para hacer la creacion de la DB local en Android y su ruta
         public SQLiteAsyncConnection GetConnection()
         {
             var documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);

@@ -8,6 +8,7 @@
 
     <ContentPage.Content>
         <StackLayout>
+            <!-- Barra de superior de la App -->
             <StackLayout Orientation="Horizontal" BackgroundColor="#52BE80">
                 <Image HeightRequest="60" BackgroundColor="#52BE80" HorizontalOptions="CenterAndExpand">
                     <Image.Source>
@@ -15,6 +16,7 @@
                     </Image.Source>
                 </Image>
             </StackLayout>
+            <!-- Entry para el texto -->
             <Editor Placeholder="Escribir..." HeightRequest="400" x:Name="editor" Text=""></Editor>
             <Button BackgroundColor="#52BE80" FontSize="Title" TextColor="Black" Text="PUBLICAR" Clicked="btnPublicar">
                 <Button.Triggers>
@@ -23,6 +25,7 @@
                     </DataTrigger>
                 </Button.Triggers>
             </Button>
+            <!-- Barra de herramientas inferior de la App -->
             <StackLayout BackgroundColor="#52BE80" Spacing="28" VerticalOptions="EndAndExpand" Orientation="Horizontal">
                 <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnComunity">
                     <ImageButton.Source>

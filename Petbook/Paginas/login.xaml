@@ -8,17 +8,20 @@
              x:Class="Petbook.Paginas.login">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Padding="20">
+            <!-- Logo -->
             <Image>
                 <Image.Source>
                     <FileImageSource File="Logo.png"></FileImageSource>
                 </Image.Source>
             </Image>
+            <!-- Recuadro verde -->
             <Grid BackgroundColor="#B1EEBB">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
+                <!-- Apliar los entry y elementos internos del recuadro -->
                 <StackLayout Grid.Row="1" Padding="10">
                     <Image WidthRequest="70">
                         <Image.Source>

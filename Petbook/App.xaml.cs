@@ -11,7 +11,8 @@ namespace Petbook
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new login());
+            MainPage = new NavigationPage(new login()); //Se establece la forma de navegacion entre paginas con la clase NavigationPage
+                                                        //y donde se iniciara la App (login)
         }
 
         protected override void OnStart()

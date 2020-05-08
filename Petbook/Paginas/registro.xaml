@@ -10,17 +10,20 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Orientation="Vertical" Padding="30">
+                <!-- Logo -->
                 <Image>
                     <Image.Source>
                         <FileImageSource File="Logo.png"></FileImageSource>
                     </Image.Source>
                 </Image>
+                <!-- Recuadro verde -->
                 <Grid BackgroundColor="#B1EEBB">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
+                    <!-- Apliar los entry y elementos internos del recuadro -->
                     <StackLayout Grid.Row="1" Padding="10">
                         <Entry x:Name="user" Placeholder="USUARIO" PlaceholderColor="Gray" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                         <Entry x:Name="correo" Placeholder="CORREO ELECTRONICO" PlaceholderColor="Gray" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>

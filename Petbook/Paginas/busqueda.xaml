@@ -7,8 +7,11 @@
              x:Class="Petbook.Paginas.busqueda">
     <ContentPage.Content>
         <StackLayout>
+            <!-- Barra de busqueda -->
             <SearchBar x:Name="busq" TextChanged="mostrarLog" TextColor="Black" SearchButtonPressed="guardarLog" BackgroundColor="#52BE80"/>
+            <!-- Listado de palabras buscadas -->
             <ListView x:Name="logBuscado" Footer="" SelectionMode="None"></ListView>
+            <!-- Barra de herramientas inferior de la App -->
             <StackLayout BackgroundColor="#52BE80" Spacing="28" VerticalOptions="EndAndExpand" Orientation="Horizontal">
                 <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnComunity">
                     <ImageButton.Source>

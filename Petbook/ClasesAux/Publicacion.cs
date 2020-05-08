@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Petbook.ClasesAux
 {
+    //Clase para guardar las publicaciones que se crean
     public class Publicacion
     {
         public string Autor { get; set; }

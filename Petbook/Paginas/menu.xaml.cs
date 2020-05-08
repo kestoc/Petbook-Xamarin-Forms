@@ -13,18 +13,21 @@ namespace Petbook.Paginas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class menu : ContentPage
     {
-        public UserModel userAct { get; set; }
-        List<string> guardado = new List<string> { };
-        public IList<Options> Options { get; private set; }
+        public UserModel userAct { get; set; } //Variable para buscar el usuari actual que inicio sesion
+
+        List<string> guardado = new List<string> { }; //Lista donde se guarda lo buscado
+        public IList<Options> Options { get; private set; } //Lista donde se guardaran las opciones 
         public menu(UserModel temp, List<string> temp2)
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetHasNavigationBar(this, false); //Sentencia para eliminar la barra superior de herramientas por defecto de Android
             userAct = temp;
             guardado = temp2;
+            //BindingContext = userAct;
 
-            DisplayAlert("Hola", userAct.name.ToString(), "Ok");
-
+            DisplayAlert("Hola", userAct.name.ToString(), "Ok"); //Por problemas con el BindingContext se decidio mostrar el nombre del usuario por medio de una alerta
+            
+            //Agregando elementos a la lista de opciones
             Options = new List<Options>();
             Options.Add(new Options
             {
@@ -62,13 +65,15 @@ namespace Petbook.Paginas
                 Imagen = "lock.png"
             });
 
-            BindingContext = this;
+            BindingContext = this; //Crear la relacion con la clase y el XAML para mostrar la informacion (patron MVVM)
         }
 
-        private void salir(object sender, EventArgs e)
+        private void salir(object sender, EventArgs e) //Funcion evento para el boton salir para volver a la seccion de login
         {
             ((NavigationPage)this.Parent).PushAsync(new login());
         }
+
+        //Funciones para direccionar a las respectivas paginas con los botenes de la barra de herramientas inferior de la App
         private void btnComunity(object sender, EventArgs e)
         {
             ((NavigationPage)this.Parent).PushAsync(new comunidad(userAct,guardado));

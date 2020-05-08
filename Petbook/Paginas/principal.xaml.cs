@@ -14,16 +14,18 @@ namespace Petbook.Paginas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class principal : ContentPage
     {
-        public UserModel userAct { get; set; }
-        public IList<Publicacion> Publicaciones { get; private set; }
-        List<string> guardado = new List<string> { };
+        public UserModel userAct { get; set; } //Variable para buscar el usuari actual que inicio sesion
+        public IList<Publicacion> Publicaciones { get; private set; } //Listado donde se guardan las publicaciones
+
+        List<string> guardado = new List<string> { }; //Lista donde se guarda lo buscado
         public principal(UserModel temp, List<string> temp2)
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetHasNavigationBar(this, false); //Sentencia para eliminar la barra superior de herramientas por defecto de Android
             userAct = temp;
             guardado = temp2;
 
+            //Agregando publicaciones a la lista
             Publicaciones = new List<Publicacion>();
             Publicaciones.Add(new Publicacion
             {
@@ -67,8 +69,28 @@ namespace Petbook.Paginas
                 Imagen = "https://img.vixdata.io/pd/jpg-large/es/sites/default/files/btg/curiosidades.batanga.com/files/Por-que-los-gatos-traen-animales-muertos-a-casa-1.jpg"
             });
 
-            BindingContext = this;
+            BindingContext = this; //Crear la relacion con la clase y el XAML para mostrar la informacion (patron MVVM)
         }
+
+        private void OnButtonClickedUp(object sender, EventArgs e) //Funcion evento para cambiar el color de like
+        {
+            ImageButton btn = (ImageButton)sender;
+            if (btn.BackgroundColor.Equals(Color.FromHex("#808080")))
+                btn.BackgroundColor = Color.FromHex("#52BE80");
+            else
+                btn.BackgroundColor = Color.FromHex("#808080");
+        }
+
+        private void OnButtonClickedDown(object sender, EventArgs e) //Funcion evento para cambiar el color de dislike
+        {
+            ImageButton btn = (ImageButton)sender;
+            if (btn.BackgroundColor.Equals(Color.FromHex("#808080")))
+                btn.BackgroundColor = Color.FromHex("#E40000");
+            else
+                btn.BackgroundColor = Color.FromHex("#808080");
+        }
+
+        //Funciones para direccionar a las respectivas paginas con los botenes de la barra de herramientas inferior de la App
         private void btnComunity(object sender, EventArgs e)
         {
             ((NavigationPage)this.Parent).PushAsync(new comunidad(userAct,guardado));
@@ -88,23 +110,6 @@ namespace Petbook.Paginas
         private void btnMenu(object sender, EventArgs e)
         {
             ((NavigationPage)this.Parent).PushAsync(new menu(userAct,guardado));
-        }
-        private void OnButtonClickedUp(object sender, EventArgs e)
-        {
-            ImageButton btn = (ImageButton)sender;
-            if (btn.BackgroundColor.Equals(Color.FromHex("#808080")))
-                btn.BackgroundColor = Color.FromHex("#52BE80");
-            else
-                btn.BackgroundColor = Color.FromHex("#808080");
-        }
-
-        private void OnButtonClickedDown(object sender, EventArgs e)
-        {
-            ImageButton btn = (ImageButton)sender;
-            if (btn.BackgroundColor.Equals(Color.FromHex("#808080")))
-                btn.BackgroundColor = Color.FromHex("#E40000");
-            else
-                btn.BackgroundColor = Color.FromHex("#808080");
         }
     }
 }

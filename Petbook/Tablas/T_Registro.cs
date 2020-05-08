@@ -5,6 +5,7 @@ using SQLite;
 
 namespace Petbook.Tablas
 {
+    //Modelo de tabla para la DB donde se almacenan los usuarios que se registran
     public class T_Registro
     {
         [PrimaryKey, AutoIncrement]

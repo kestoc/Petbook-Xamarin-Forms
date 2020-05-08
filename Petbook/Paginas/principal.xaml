@@ -8,6 +8,7 @@
 
     <ContentPage.Content>
         <StackLayout>
+            <!-- Enlistando las publicaciones creadas -->
             <ListView ItemsSource="{Binding Publicaciones}"
                              HasUnevenRows="True" SelectionMode="None">
                 <ListView.ItemTemplate>
@@ -66,7 +67,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
+            <!-- Barra de herramientas inferior de la App -->
             <StackLayout BackgroundColor="#52BE80" Spacing="28" VerticalOptions="EndAndExpand" Orientation="Horizontal">
                 <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnComunity">
                     <ImageButton.Source>

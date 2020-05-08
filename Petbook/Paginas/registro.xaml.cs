@@ -14,23 +14,23 @@ namespace Petbook.Paginas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class registro : ContentPage
     {
-        private SQLiteAsyncConnection conn;
+        private SQLiteAsyncConnection conn; //Variable para establecer la conexion con la DB
 
         public registro()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
-            conn = DependencyService.Get<ISQLiteDB>().GetConnection();
+            NavigationPage.SetHasNavigationBar(this, false); //Sentencia para eliminar la barra superior de herramientas por defecto de Android
+            conn = DependencyService.Get<ISQLiteDB>().GetConnection(); //Estableciendo la conexion con la DB
         }
 
-        private void btnEnviar(object sender, EventArgs e)
+        private void btnEnviar(object sender, EventArgs e) //Funcion evento para mandar los datos del usuario a la tabla y se guarde en la DB
         {
             conn.InsertAsync(new T_Registro { user = user.Text, correo = correo.Text, password = password.Text, fecha = fecha.Date });
             LimpiarCampos();
             ((NavigationPage)this.Parent).PushAsync(new login());
         }
 
-        private void LimpiarCampos()
+        private void LimpiarCampos() //Funcion para limpiar los campos de texto
         {
             user.Text = "";
             password.Text = "";
