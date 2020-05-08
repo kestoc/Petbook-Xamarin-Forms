@@ -4,7 +4,6 @@ using System.Text;
 
 namespace Petbook.ClasesAux
 {
-    //Clase auxiliar almacenar y poder crear las comunidades en dicha seccion 
    public class Comunidad
     {
         public string Nombre { get; set; }

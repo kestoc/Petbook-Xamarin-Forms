@@ -10,20 +10,17 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Orientation="Vertical" Padding="30">
-                <!-- Logo de la App -->
                 <Image>
                     <Image.Source>
                         <FileImageSource File="Logo.png"></FileImageSource>
                     </Image.Source>
                 </Image>
-                <!-- Recuadro contenedor de los elementos (Caja verde) -->
                 <Grid BackgroundColor="#B1EEBB">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <!-- Organizacion de los elementos en modo de stack -->
                     <StackLayout Grid.Row="1" Padding="10">
                         <Entry x:Name="user" Placeholder="USUARIO" PlaceholderColor="Gray" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                         <Entry x:Name="correo" Placeholder="CORREO ELECTRONICO" PlaceholderColor="Gray" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
@@ -34,7 +31,7 @@
                         <CheckBox IsChecked="False" HorizontalOptions="Center" TranslationX="-100" TranslationY="-40" x:Name="check"></CheckBox>
                         <Button BackgroundColor="#52BE80" FontSize="Title" TextColor="Black" Text="ENVIAR" Clicked="btnEnviar">
                             <Button.Triggers>
-                                <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference check},Path=IsChecked}" Value="False"> <!-- Referenciando a la check box para que se habilite el boton de enviar -->
+                                <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference check},Path=IsChecked}" Value="False">
                                     <Setter Property="IsEnabled" Value="False"></Setter>
                                 </DataTrigger>
                             </Button.Triggers>

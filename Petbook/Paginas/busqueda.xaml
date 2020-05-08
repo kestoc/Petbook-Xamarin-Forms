@@ -7,11 +7,8 @@
              x:Class="Petbook.Paginas.busqueda">
     <ContentPage.Content>
         <StackLayout>
-            <!-- Se declara una barra de busqueda y se personaliza, luego se es definida una vista en modo de lista
-                 con el fin de mostrar las busquedas ya realizadas e ir filtrando mientras se escribe -->
             <SearchBar x:Name="busq" TextChanged="mostrarLog" TextColor="Black" SearchButtonPressed="guardarLog" BackgroundColor="#52BE80"/>
             <ListView x:Name="logBuscado" Footer="" SelectionMode="None"></ListView>
-            <!-- Seccion donde se diseña la barra inferior de herramientas de la App -->
             <StackLayout BackgroundColor="#52BE80" Spacing="28" VerticalOptions="EndAndExpand" Orientation="Horizontal">
                 <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnComunity">
                     <ImageButton.Source>

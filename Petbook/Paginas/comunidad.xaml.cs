@@ -13,18 +13,16 @@ namespace Petbook.Paginas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class comunidad : ContentPage
     {
-        public UserModel userAct { get; set; } //Variable para preservar el valor del usuario que inicio sesion
-        public IList<Comunidad> Comuni { get; private set; } //Lista para almacenar las comunidades que se creen
-
-        List<string> guardado = new List<string> { }; //Lista para almacenar las busquedas realizadas 
+        public UserModel userAct { get; set; }
+        public IList<Comunidad> Comuni { get; private set; }
+        List<string> guardado = new List<string> { };
         public comunidad(UserModel temp, List<string> temp2)
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false); //Sentencia para eliminar la barra de herramientas superior predeterminada por Android
+            NavigationPage.SetHasNavigationBar(this, false);
             userAct = temp;
             guardado = temp2;
 
-            //Añadiendo elementos a la lista de comunidades
             Comuni = new List<Comunidad>();
             Comuni.Add(new Comunidad
             {
@@ -46,10 +44,8 @@ namespace Petbook.Paginas
                 Miembros = "27.500 miembros"
             });
 
-            BindingContext = this; //Construir el contexto para hacer el linkeamiento de la clase y sus elementos y la parte grafica del XAML (patron MVVM)
+            BindingContext = this;
         }
-
-        //Funciones para la navegacion y funcionamiento entre las paginas correspondientes a la barra inferior de herramientas de la App
         private void btnComunity(object sender, EventArgs e)
         {
             ((NavigationPage)this.Parent).PushAsync(new comunidad(userAct,guardado));

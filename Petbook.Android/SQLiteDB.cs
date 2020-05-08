@@ -18,7 +18,6 @@ using Petbook.Tablas;
 [assembly: Dependency(typeof(SQLiteDB))]
 namespace Petbook.Droid
 {
-    //Clase para crear la base de datos local en el dispositivo y obtener su ruta.
     public class SQLiteDB : ISQLiteDB
     {
         public SQLiteAsyncConnection GetConnection()
