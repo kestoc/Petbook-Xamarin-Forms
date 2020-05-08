@@ -17,7 +17,7 @@ namespace Petbook.Paginas
         public busqueda(UserModel temp, List<string> temp2)
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false); //Sentencia para eliminar la barra superior de herramientas por defecto de Android
+            NavigationPage.SetHasNavigationBar(this, false);  //Sentencia para eliminar la barra superior de herramientas por defecto de Android
             userAct = temp;
             guardado = temp2;
         }
