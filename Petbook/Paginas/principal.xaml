@@ -8,9 +8,33 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout BackgroundColor="#52BE80" Spacing="28" VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnComunity">
+                    <ImageButton.Source>
+                        <FileImageSource File="comunity.png"></FileImageSource>
+                    </ImageButton.Source>
+                </ImageButton>
+                <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnWrite">
+                    <ImageButton.Source>
+                        <FileImageSource File="write.png"></FileImageSource>
+                    </ImageButton.Source>
+                </ImageButton>
+                <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnLogo">
+                    <ImageButton.Source>
+                        <FileImageSource File="Logo.png"></FileImageSource>
+                    </ImageButton.Source>
+                </ImageButton>
+                <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnSearch">
+                    <ImageButton.Source>
+                        <FileImageSource File="search.png"></FileImageSource>
+                    </ImageButton.Source>
+                </ImageButton>
+                <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnMenu">
+                    <ImageButton.Source>
+                        <FileImageSource File="menu.png"></FileImageSource>
+                    </ImageButton.Source>
+                </ImageButton>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

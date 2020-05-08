@@ -2,8 +2,10 @@
 using SQLite;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,8 +37,9 @@ namespace Petbook.Paginas
             IEnumerable<T_Registro> resultado = SELECT_WHERE(db, user.Text, password.Text);
             if (resultado.Count() > 0)
             {
+                var user1 = new UserModel { name = user.Text };
                 LimpiarCampos();
-                Navigation.PushAsync(new menu()); /*Recordar cambiar el direccionamiento a la pagina principal*/
+                Navigation.PushAsync(new principal(user1)); 
             }
             else
             {

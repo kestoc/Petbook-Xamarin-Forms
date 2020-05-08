@@ -5,21 +5,43 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Petbook.Paginas.menu">
+    
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Horizontal" BackgroundColor="#52BE80">
-                <Image HeightRequest="60" BackgroundColor="#52BE80" HorizontalOptions="StartAndExpand">
+                <Image HeightRequest="60" BackgroundColor="#52BE80" TranslationX="5" HorizontalOptions="StartAndExpand">
                     <Image.Source>
                         <FileImageSource File="personCircle.png"></FileImageSource>
                     </Image.Source>
                 </Image>
+                <Label Text="{Binding name}" TranslationX="-270" TranslationY="10" FontAttributes="Bold" FontSize="40" TextColor="Black"></Label>
                 <ImageButton HeightRequest="30" BackgroundColor="#52BE80" TranslationX="-10">
                     <ImageButton.Source>
                         <FileImageSource File="logOut.png"></FileImageSource>
                     </ImageButton.Source>
                 </ImageButton>
             </StackLayout>
-            
+            <ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.RowSpan="2" Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="60" WidthRequest="60"></Image>
+                                <Label Grid.Column="1" Text="{Binding Name}" FontAttributes="Bold"></Label>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Location}" VerticalOptions="End"></Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <StackLayout BackgroundColor="#52BE80" Spacing="28" VerticalOptions="EndAndExpand" Orientation="Horizontal">
                 <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnComunity">
                     <ImageButton.Source>

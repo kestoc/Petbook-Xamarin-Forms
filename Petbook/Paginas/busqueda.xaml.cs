@@ -13,10 +13,13 @@ namespace Petbook.Paginas
     public partial class busqueda : ContentPage
     {
         List<string> guardado = new List<string> {};
-        public busqueda()
+        public UserModel userAct { get; set; }
+        public busqueda(UserModel temp)
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            userAct = temp;
+            BindingContext = userAct;
         }
         void guardarLog(object sender, EventArgs e)
         {
@@ -34,23 +37,23 @@ namespace Petbook.Paginas
         }
         private void btnComunity(object sender, EventArgs e)
         {
-            ((NavigationPage)this.Parent).PushAsync(new comunidad());
+            ((NavigationPage)this.Parent).PushAsync(new comunidad(userAct));
         }
         private void btnWrite(object sender, EventArgs e)
         {
-            ((NavigationPage)this.Parent).PushAsync(new publicacion());
+            ((NavigationPage)this.Parent).PushAsync(new publicacion(userAct));
         }
         private void btnLogo(object sender, EventArgs e)
         {
-            ((NavigationPage)this.Parent).PushAsync(new principal());
+            ((NavigationPage)this.Parent).PushAsync(new principal(userAct));
         }
         private void btnSearch(object sender, EventArgs e)
         {
-            ((NavigationPage)this.Parent).PushAsync(new busqueda());
+            ((NavigationPage)this.Parent).PushAsync(new busqueda(userAct));
         }
         private void btnMenu(object sender, EventArgs e)
         {
-            ((NavigationPage)this.Parent).PushAsync(new menu());
+            ((NavigationPage)this.Parent).PushAsync(new menu(userAct));
         }
     }
 }

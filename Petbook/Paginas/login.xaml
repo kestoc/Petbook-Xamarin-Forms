@@ -25,7 +25,7 @@
                             <FileImageSource File="Slogan.png"></FileImageSource>
                         </Image.Source>
                     </Image>
-                    <Entry x:Name="user" Placeholder="USUARIO" PlaceholderColor="Gray" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <Entry x:Name="user" Text="{Binding imprimir, Mode=TwoWay}" Placeholder="USUARIO" PlaceholderColor="Gray" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                     <Entry x:Name="password" IsPassword="True" Text="" Placeholder="CONTRASEÑA" PlaceholderColor="Gray" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                     <Button BackgroundColor="#52BE80" FontSize="Title" TextColor="Black" Text="INGRESAR" Clicked="btnLogin">
                         <Button.Triggers>
