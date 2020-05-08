@@ -1,5 +1,5 @@
 # Petbook-Xamarin-Forms
-Proyecto HCI Prototype Movil Petbook Xamarin Forms
+Proyecto HCI Prototipo Movil Petbook Xamarin Forms
 
 - Trabajado en Visual Studio 2019.
 - Se debe instalar el Nuget de SQLite para el funcionamiento de la DB.
