@@ -19,6 +19,7 @@ namespace Petbook.Paginas
     public partial class login : ContentPage
     {
         private SQLiteAsyncConnection conn;
+        List<string> guardado = new List<string> { };
         public login()
         {
             InitializeComponent();
@@ -39,7 +40,7 @@ namespace Petbook.Paginas
             {
                 var user1 = new UserModel { name = user.Text };
                 LimpiarCampos();
-                Navigation.PushAsync(new principal(user1)); 
+                Navigation.PushAsync(new principal(user1,guardado)); 
             }
             else
             {
