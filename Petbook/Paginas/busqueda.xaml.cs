@@ -19,7 +19,6 @@ namespace Petbook.Paginas
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             userAct = temp;
-            BindingContext = userAct;
         }
         void guardarLog(object sender, EventArgs e)
         {

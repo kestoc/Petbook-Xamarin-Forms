@@ -18,7 +18,6 @@ namespace Petbook.Paginas
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             userAct = temp;
-            BindingContext = userAct;
         }
         private void LimpiarCampo()
         {

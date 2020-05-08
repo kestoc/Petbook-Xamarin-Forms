@@ -9,7 +9,7 @@
     <ContentPage.Content>
         <StackLayout>
             <ListView ItemsSource="{Binding Publicaciones}"
-                             HasUnevenRows="True">
+                             HasUnevenRows="True" SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

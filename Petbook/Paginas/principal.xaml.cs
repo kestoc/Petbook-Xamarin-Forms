@@ -21,7 +21,6 @@ namespace Petbook.Paginas
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             userAct = temp;
-            BindingContext = userAct;
 
             Publicaciones = new List<Publicacion>();
             Publicaciones.Add(new Publicacion

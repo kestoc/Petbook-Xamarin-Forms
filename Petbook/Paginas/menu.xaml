@@ -8,38 +8,40 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal" BackgroundColor="#52BE80">
+            <StackLayout MenuItem.Accelerator="{Binding Options}" Orientation="Horizontal" BackgroundColor="#52BE80">
                 <Image HeightRequest="60" BackgroundColor="#52BE80" TranslationX="5" HorizontalOptions="StartAndExpand">
                     <Image.Source>
                         <FileImageSource File="personCircle.png"></FileImageSource>
                     </Image.Source>
                 </Image>
-                <Label Text="{Binding name}" TranslationX="-270" TranslationY="10" FontAttributes="Bold" FontSize="40" TextColor="Black"></Label>
+                <!--<Label Text="{Binding name}" TranslationX="-270" TranslationY="10" FontAttributes="Bold" FontSize="40" TextColor="Black"></Label>-->
                 <ImageButton HeightRequest="30" BackgroundColor="#52BE80" TranslationX="-10" Clicked="salir">
                     <ImageButton.Source>
                         <FileImageSource File="logOut.png"></FileImageSource>
                     </ImageButton.Source>
                 </ImageButton>
             </StackLayout>
-            <ListView>
+            <ListView ItemsSource="{Binding Options}" SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid Padding="10">
+                            <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.RowSpan="2" HeightRequest="60" BackgroundColor="White">
+                                <Image Grid.RowSpan="2" Aspect="AspectFit" WidthRequest="50" HeightRequest="50" BackgroundColor="White">
                                     <Image.Source>
-                                        <FileImageSource File="personAdd.png"></FileImageSource>
+                                        <FileImageSource File="{Binding Imagen}"></FileImageSource>
                                     </Image.Source>
                                 </Image>
-                                <Label Grid.Column="1" Text="EDITAR PERFIL" FontAttributes="Bold"></Label>
+                                <Label Grid.Column="1" Text="{Binding Texto}" FontSize="Title" TranslationY="10" TranslationX="5" TextColor="Black" FontAttributes="Bold"></Label>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
