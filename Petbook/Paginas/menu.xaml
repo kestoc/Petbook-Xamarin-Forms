@@ -15,7 +15,7 @@
                     </Image.Source>
                 </Image>
                 <Label Text="{Binding name}" TranslationX="-270" TranslationY="10" FontAttributes="Bold" FontSize="40" TextColor="Black"></Label>
-                <ImageButton HeightRequest="30" BackgroundColor="#52BE80" TranslationX="-10">
+                <ImageButton HeightRequest="30" BackgroundColor="#52BE80" TranslationX="-10" Clicked="salir">
                     <ImageButton.Source>
                         <FileImageSource File="logOut.png"></FileImageSource>
                     </ImageButton.Source>
@@ -34,9 +34,12 @@
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.RowSpan="2" Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="60" WidthRequest="60"></Image>
-                                <Label Grid.Column="1" Text="{Binding Name}" FontAttributes="Bold"></Label>
-                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Location}" VerticalOptions="End"></Label>
+                                <Image Grid.RowSpan="2" HeightRequest="60" BackgroundColor="White">
+                                    <Image.Source>
+                                        <FileImageSource File="personAdd.png"></FileImageSource>
+                                    </Image.Source>
+                                </Image>
+                                <Label Grid.Column="1" Text="EDITAR PERFIL" FontAttributes="Bold"></Label>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

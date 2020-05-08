@@ -20,6 +20,11 @@ namespace Petbook.Paginas
             userAct = temp;
             BindingContext = userAct;
         }
+
+        private void salir(object sender, EventArgs e)
+        {
+            ((NavigationPage)this.Parent).PushAsync(new login());
+        }
         private void btnComunity(object sender, EventArgs e)
         {
             ((NavigationPage)this.Parent).PushAsync(new comunidad(userAct));

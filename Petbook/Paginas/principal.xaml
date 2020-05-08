@@ -5,9 +5,68 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Petbook.Paginas.principal">
-    
+
     <ContentPage.Content>
         <StackLayout>
+            <ListView ItemsSource="{Binding Publicaciones}"
+                             HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding Autor}"
+                               FontAttributes="Bold"
+                               VerticalOptions="Start"/>
+
+
+                                <Label Grid.Row="1"
+                               Text="{Binding Texto }"
+                               VerticalOptions="StartAndExpand"/>
+
+                                <Image Grid.Row="1"
+                               Grid.ColumnSpan="2"
+                               Source="{Binding Imagen}"
+                               Aspect="AspectFit"
+                               HeightRequest="300"
+                               WidthRequest="300"
+                               HorizontalOptions="CenterAndExpand"/>
+
+                                <ImageButton Source="arrowDown.png" 
+                                CornerRadius="30"
+                                VerticalOptions="End"
+                                HorizontalOptions="Center"
+                                Grid.Row="1"
+                                HeightRequest="30"
+                                BackgroundColor="#808080"
+                                Clicked="OnButtonClickedDown"
+                                x:Name="DownVote"/>
+
+                                <ImageButton Source="arrowUp.png"                                
+                                CornerRadius="30"
+                                VerticalOptions="End"
+                                HorizontalOptions="Start"
+                                Grid.Row="1"
+                                HeightRequest="30"
+                                BackgroundColor="#808080"
+                                Clicked="OnButtonClickedUp"
+                                x:Name="UpVote"/>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
             <StackLayout BackgroundColor="#52BE80" Spacing="28" VerticalOptions="EndAndExpand" Orientation="Horizontal">
                 <ImageButton HeightRequest="60" BackgroundColor="#52BE80" Clicked="btnComunity">
                     <ImageButton.Source>
